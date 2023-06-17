@@ -75,7 +75,7 @@ _ejemplo de contrato desplegado_
 _Cambiar la cadena de etherum a la red de prueba de mumbai pages/\_app.js 7_ const activeChain = "mumbai";
 
 Código fuente index.js
-```
+```react
 import { ConnectWallet } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
