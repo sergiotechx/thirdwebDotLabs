@@ -1,86 +1,81 @@
+**textos colaborativos thirdweDotLabs** [https://pad.riseup.net/p/dotlabs](https://pad.riseup.net/p/dotlabs)
 
-thirdweDotLabs
-https://pad.riseup.net/p/dotlabs
+Antes de iniciar, instalar la billetera, anexar la red de prueba , tender fonds e instalar Node js
 
-Billetera:
-https://metamask.io/
-Añadir mumbai
-https://chainlist.org/?testnets=true&search=polygon
-Faucet Mumbai
-https://mumbaifaucet.com/
-Nodejs
-https://nodejs.org/es
+**Billetera:** [https://metamask.io/](https://metamask.io/) 
 
-//////////////////////////Non code Signature Minting //////////////////////////////////////////////
-https://www.freepik.com/
-https://thirdweb.com/thirdweb.eth/SignatureDrop
-npx create-next-app@latest
+**Añadir mumbai** [https://chainlist.org/?testnets=true&search=polygon](https://chainlist.org/?testnets=true&search=polygon) 
 
-/////////////////////////Dapp con herramientas Thirdweb//////////////////////////////////////
+**Faucet Mumbai** [https://mumbaifaucet.com/](https://mumbaifaucet.com/) 
 
-Comandos para crear el contrato en Hardhat:
+**Nodejs** [https://nodejs.org/es](https://nodejs.org/es)
 
-npx thirdweb create contract
-Nombre del proyecto: MessageBlock
-Framework de apoyo: hardhat
-Nombre del contrato :Message
+**//////////////////////////Non code Signature Minting //////////////////////////////////////////////**
 
-Código fuente del contrato
+**Muchas image tip NFT:**  [https://www.freepik.com/](https://www.freepik.com/) 
 
-/*Message.sol */
-/*
-// SPDX-License-Identifier: GPL-3.0
+**signing nft minting:** [https://thirdweb.com/thirdweb.eth/SignatureDrop](https://thirdweb.com/thirdweb.eth/SignatureDrop) 
 
-pragma solidity >=0.8.2 <0.9.0;
+**Comando:** npx create-next-app@latest
 
-/**
- * @title Storage
- * @dev Store & retrieve value in a variable
- * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
- */
-contract Message {
+**/////////////////////////Dapp con herramientas Thirdweb//////////////////////////////////////**
 
-    string message;
+**Sección contrato**
+
+_Comandos para crear el contrato en Hardhat:_
+
+_**Comandos:**_
+
+*   npx thirdweb create contract 
+*   Nombre del proyecto: MessageBlock 
+*   Framework de apoyo: hardhat 
+*   Nombre del contrato :Message
+
+_Código fuente del contrato_
+```solidity
+SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.8.2 \<0.9.0;
 
 
-    function setMessage(string memory _message) public {
-        message = _message;
-    }
+string message;
 
-    /**
-     * @dev Return value 
-     * @return value of 'number'
-     */
-    function getMessage() public view returns ( string memory){
-        return message;
-    }
+function setMessage(string memory message) public
+{
+  message = _message;
 }
-*/
 
-Comandos para desplegar el contrato:
+function getMessage() public view returns ( string memory)
+{
+ return message;
+}  
+```
+_Comandos para desplegar el contrato:_
 
-npx thirdweb build
-npx thirdweb deploy
-https://thirdweb.com/contracts/deploy/QmSNiKX7gJeuWjx9mwVB8EpsgJBthY1DiTY9TKNZrDbNDe
-https://thirdweb.com/mumbai/0x2bA4B4F88BE07707e2349b1475b896F93DEEB57C
+*   npx thirdweb build 
+*   npx thirdweb deploy 
 
-///////////////////////APP//////////////////////
-Comandos para crear la dapp
+_Ejemplo del link que despliega_
 
-npx thirdweb create app
-MessageWeb
+[https://thirdweb.com/contracts/deploy/QmSNiKX7gJeuWjx9mwVB8EpsgJBthY1DiTY9TKNZrDbNDe](https://thirdweb.com/contracts/deploy/QmSNiKX7gJeuWjx9mwVB8EpsgJBthY1DiTY9TKNZrDbNDe)
 
-cd messageweb
+_ejemplo de contrato desplegado_
 
-Lista de cadenas activas
-https://portal.thirdweb.com/react/react.thirdwebprovider#default-chains
+ [https://thirdweb.com/mumbai/0x2bA4B4F88BE07707e2349b1475b896F93DEEB57C](https://thirdweb.com/mumbai/0x2bA4B4F88BE07707e2349b1475b896F93DEEB57C)
 
-Cambiar la cadena de etherum a la red de prueba de mumbai
-pages/_app.js
-7 const activeChain = "mumbai";
+**Sección daap**
+
+ Comandos para crear la dapp
+
+*   npx thirdweb create app MessageWeb
+*   cd messageweb
+
+**Lista de cadenas activas** [https://portal.thirdweb.com/react/react.thirdwebprovider#default-chains](https://portal.thirdweb.com/react/react.thirdwebprovider#default-chains)
+
+_Cambiar la cadena de etherum a la red de prueba de mumbai pages/\_app.js 7_ const activeChain = "mumbai";
 
 Código fuente index.js
-
+```
 import { ConnectWallet } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
@@ -141,7 +136,4 @@ export default function Home() {
     </>
   );
 }
-
-
-
-)
+```
