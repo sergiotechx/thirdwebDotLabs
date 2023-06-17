@@ -33,22 +33,33 @@ _**Comandos:**_
 
 _Código fuente del contrato_
 ```solidity
-SPDX-License-Identifier: GPL-3.0
 
-pragma solidity >=0.8.2 \<0.9.0;
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.8.2 <0.9.0;
+
+/**
+ * @title Storage
+ * @dev Store & retrieve value in a variable
+ * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
+ */
+contract Message {
+
+    string message;
 
 
-string message;
+    function setMessage(string memory _message) public {
+        message = _message;
+    }
 
-function setMessage(string memory message) public
-{
-  message = _message;
-}
-
-function getMessage() public view returns ( string memory)
-{
- return message;
-}  
+    /**
+     * @dev Return value 
+     * @return value of 'number'
+     */
+    function getMessage() public view returns ( string memory){
+        return message;
+    }
+} 
 ```
 _Comandos para desplegar el contrato:_
 
